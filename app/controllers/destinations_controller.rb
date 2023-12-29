@@ -1,12 +1,12 @@
 class DestinationsController < ApplicationController
-  before_action :set_destination, only: [:show, :edit, :update, :destroy]
+  # before_action :set_destination, only: [:show, :edit, :update, :destroy]
 
   def index
     @destinations = Destination.all
   end
 
   def show
-    @destination = Destination.find_by(params[:id])
+    @destination = Destination.find_by(id: params[:id])
     @weather = WeatherFacade.get_weather(@destination.lat,@destination.lon)
     @max_temp = WeatherFacade.max_temp(@destination.lat,@destination.lon)
     @min_temp = WeatherFacade.min_temp(@destination.lat,@destination.lon)
