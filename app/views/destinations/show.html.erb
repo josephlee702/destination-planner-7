@@ -15,11 +15,15 @@
     <%= @destination.description %>
   </p>
 
-  <%= image_tag(@destination.image_url) %>
+  <%= image_tag(@new_image_url) %>
 
   <div class="row">
     <h4>Forecast for <%= @destination.name %>:</h4>
-
+    Date: <%= "Tuesday, October 12th" %><br>
+    Temperature: <%= @weather[:current][:temp] %><br>
+    High Temp (Next 8 Days)(Fahrenheit): <%= @max_temp %> <br>
+    Low Temp (Next 8 Days)(Fahrenheit): <%= @min_temp %> <br>
+    Summary: <%= @weather[:current][:weather].first[:description] %>
   </div>
 
   <div class="row">

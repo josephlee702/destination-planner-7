@@ -6,6 +6,11 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    @destination = Destination.find_by(params[:id])
+    @weather = WeatherFacade.get_weather(@destination.lat,@destination.lon)
+    @max_temp = WeatherFacade.max_temp(@destination.lat,@destination.lon)
+    @min_temp = WeatherFacade.min_temp(@destination.lat,@destination.lon)
+    @new_image_url = GifFacade.gifs(@weather[:current][:weather].first[:description])
   end
 
   def new
