@@ -3,6 +3,8 @@ class DestinationsController < ApplicationController
 
   def index
     @destinations = Destination.all
+    #line under is consuming the API that I built
+    # @destinations = WeatherFacade.get_weather_from_api_i_built
   end
 
   def show

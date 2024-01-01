@@ -22,4 +22,9 @@ class WeatherFacade
     end
     array.min
   end
+
+  #this method is for calling from the API that I built
+  # def self.get_weather_from_api_i_built
+  #   json_response = WeatherService.get_weather_from_api_i_built
+  # end
 end
